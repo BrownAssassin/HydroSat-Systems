@@ -1,0 +1,13 @@
+{
+  "fill_hole_area": 512,
+  "kind": "segformer_probability_ensemble_export",
+  "members": [
+    "D:\\Repositories\\HydroSat\\artifacts\\predictions\\segformer_fresh_seed3407_test_tta12_ms075_100_125\\probs",
+    "D:\\Repositories\\HydroSat\\artifacts\\predictions\\segformer_fresh_seed6143_test_tta12_ms075_100_125\\probs"
+  ],
+  "min_component_size": 0,
+  "num_images": 216,
+  "positive_id": 1,
+  "threshold": 0.45,
+  "water_dir": "D:\\Repositories\\HydroSat\\submission\\segformer_ensemble_3407_6143_tta12_ms075_100_125_thr045_hole512\\water"
+}

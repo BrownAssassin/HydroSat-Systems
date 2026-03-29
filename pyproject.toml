@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hydrosat"
+version = "1.0.0"
+description = "Winning-model reproduction pipeline for HydroSat Systems in the ITU Ingenuity Cup preliminary round."
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest==8.3.5",
+]
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["hydrosat*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

@@ -1,0 +1,31 @@
+﻿{
+    "kind":  "current_primary_clean_segformer",
+    "model":  "SegFormer-B5",
+    "freshness":  "clean_fresh_ade_only",
+    "checkpoint":  "d:\\Repositories\\HydroSat\\work_dirs\\segformer_b5_train__prelim_water_fresh_ade_seed3407\\best_mIoU_iter_20000.pth",
+    "config":  "d:\\Repositories\\HydroSat\\configs\\segformer_water_binary_train.py",
+    "data_root":  "d:\\Repositories\\HydroSat\\artifacts\\datasets\\preliminary_round_water",
+    "val_prediction_dir":  "d:\\Repositories\\HydroSat\\artifacts\\predictions\\segformer_fresh_seed3407_val_tta4",
+    "tuning_dir":  "d:\\Repositories\\HydroSat\\artifacts\\tuning\\segformer_fresh_seed3407_val_tta4",
+    "tta_scales":  [
+                       1
+                   ],
+    "tta_flips":  [
+                      "none",
+                      "horizontal",
+                      "vertical",
+                      "both"
+                  ],
+    "threshold":  0.36,
+    "min_component_size":  1536,
+    "fill_hole_area":  512,
+    "postprocess":  "remove_small_components(min_area=1536)+fill_small_holes(max_area=512)",
+    "miou":  0.88742332819229,
+    "kappa":  0.87765544067366807,
+    "iou_background":  0.95915802957990037,
+    "iou_foreground":  0.81568862680467957,
+    "accuracy":  0.96541015369489147,
+    "precision":  0.87881879113319983,
+    "recall":  0.9190610545902631,
+    "note":  "Locked from targeted tuning and confirmed as the top row in coarse_results.csv on 2026-03-28 Adelaide time."
+}

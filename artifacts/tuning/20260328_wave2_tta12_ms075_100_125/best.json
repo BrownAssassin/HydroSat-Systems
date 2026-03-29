@@ -1,0 +1,37 @@
+{
+  "best": {
+    "accuracy": 0.9668334390030426,
+    "fill_hole_area": 512,
+    "iou_background": 0.9610120619637776,
+    "iou_foreground": 0.8182443239730862,
+    "kappa": 0.8801566605387882,
+    "min_component_size": 0,
+    "miou": 0.889628192968432,
+    "postprocess": "fill_small_holes(max_area=512)",
+    "precision": 0.9036694636095921,
+    "recall": 0.8964352385579057,
+    "threshold": 0.45
+  },
+  "fill_hole_areas": [
+    0,
+    128,
+    256,
+    512
+  ],
+  "kind": "segformer_probability_ensemble_tuning",
+  "mask_dir": "D:\\Repositories\\HydroSat\\artifacts\\datasets\\preliminary_round_water\\val\\masks",
+  "members": [
+    "D:\\Repositories\\HydroSat\\artifacts\\predictions\\segformer_fresh_seed3407_val_tta12_ms075_100_125\\probs",
+    "D:\\Repositories\\HydroSat\\artifacts\\predictions\\segformer_fresh_seed6143_val_tta12_ms075_100_125\\probs"
+  ],
+  "min_component_sizes": [
+    0,
+    512,
+    1024,
+    1536
+  ],
+  "num_images": 3822,
+  "threshold_start": 0.45,
+  "threshold_step": 0.005,
+  "threshold_stop": 0.55
+}

@@ -1,0 +1,39 @@
+﻿{
+    "kind":  "current_champion",
+    "created_at":  "2026-03-28T21:50:17.4007157+10:30",
+    "members":  [
+                    "d:\\Repositories\\HydroSat\\work_dirs\\segformer_b5_train__prelim_water_fresh_ade_seed3407\\best_mIoU_iter_20000.pth",
+                    "d:\\Repositories\\HydroSat\\work_dirs\\segformer_b5_train__prelim_water_fresh_ade_seed6143\\best_mIoU_iter_16000.pth"
+                ],
+    "val_probs":  [
+                      "d:\\Repositories\\HydroSat\\artifacts\\predictions\\segformer_fresh_seed3407_val_tta12_ms075_100_125\\probs",
+                      "d:\\Repositories\\HydroSat\\artifacts\\predictions\\segformer_fresh_seed6143_val_tta12_ms075_100_125\\probs"
+                  ],
+    "test_probs":  [
+                       "d:\\Repositories\\HydroSat\\artifacts\\predictions\\segformer_fresh_seed3407_test_tta12_ms075_100_125\\probs",
+                       "d:\\Repositories\\HydroSat\\artifacts\\predictions\\segformer_fresh_seed6143_test_tta12_ms075_100_125\\probs"
+                   ],
+    "tuning":  "d:\\Repositories\\HydroSat\\artifacts\\tuning\\20260328_wave2_tta12_ms075_100_125\\best.json",
+    "tuned_val":  {
+                      "tta_flips":  [
+                                        "none",
+                                        "horizontal",
+                                        "vertical",
+                                        "both"
+                                    ],
+                      "fill_hole_area":  512,
+                      "miou":  0.889628192968432,
+                      "postprocess":  "fill_small_holes(max_area=512)",
+                      "threshold":  0.45,
+                      "tta_scales":  [
+                                         0.75,
+                                         1,
+                                         1.25
+                                     ],
+                      "kappa":  0.88015666053878816,
+                      "min_component_size":  0
+                  },
+    "submission_root":  "d:\\Repositories\\HydroSat\\submission\\segformer_ensemble_3407_6143_tta12_ms075_100_125_thr045_hole512",
+    "submission_water":  "d:\\Repositories\\HydroSat\\submission\\segformer_ensemble_3407_6143_tta12_ms075_100_125_thr045_hole512\\water",
+    "draft_zip":  "d:\\Repositories\\HydroSat\\submission\\segformer_ensemble_3407_6143_tta12_ms075_100_125_thr045_hole512\\DraftTeam+DraftLeader+draft@example.com+0000000000.zip"
+}
