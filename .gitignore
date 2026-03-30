@@ -20,5 +20,6 @@ artifacts/metadata/
 archive_local/
 runs/
 checkpoints/
+dataset-preliminary round/
 work_dirs/
 submission/*/DraftTeam+*.zip

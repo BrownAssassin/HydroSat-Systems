@@ -1,6 +1,6 @@
 # HydroSat Systems
 
-Full-data training repo for the **ITU Ingenuity Cup: AI and Space Computing Challenge** preliminary round submission by **HydroSat Systems**.
+Training repo for the **ITU Ingenuity Cup: AI and Space Computing Challenge** preliminary round submission by **HydroSat Systems**.
 
 This repository is focused on **Track 2: Space IntelligenceS Promoting Water Quality**. The preliminary-round task is binary pixel-level water extraction from remote-sensing imagery. The competition metrics are:
 
@@ -49,13 +49,13 @@ That folder contains the checked-in competition-named ZIP plus the final `water/
 
 This repo intentionally keeps the minimum Git-tracked assets needed to retrain and document the winning result:
 
-- raw competition dataset in `dataset-preliminary round/`
 - all winning-workflow code, including the MMseg configs, in `hydrosat/`
 - winning tuning and selection metadata in `artifacts/final_selection/` and `artifacts/tuning/`
 - final mask folder and final ZIP in `submission/`
 
 This repo intentionally does **not** keep large or derived artifacts that are better shared outside Git:
 
+- raw competition dataset in `dataset-preliminary round/`
 - pretrained and winning checkpoints under `checkpoints/` and `work_dirs/`
 - local environments such as `openmmlab_env/`
 - normalized dataset copy under `artifacts/datasets/`
@@ -64,20 +64,20 @@ This repo intentionally does **not** keep large or derived artifacts that are be
 - stale checkpoints
 - older draft submissions
 
-Because the checkpoints are no longer committed, a plain Git clone supports **full retraining from the raw dataset** out of the box. A faster inference-only recreation of the winning submission is still possible, but only if you also have the shared Google Drive bundle with the saved checkpoints.
+The files shared outside Git are stored in this [Google Drive folder](https://drive.google.com/drive/folders/1GRXKf3EoJ0v9K7WNiCSiqpziBxU6kgzW?usp=sharing). Alongside the shared Google Drive bundle with the saved checkpoints, a plain Git clone supports both a **full retraining from the raw dataset** and a **faster inference-only recreation of the winning submission**.
 
 ## Repository Layout
 
 ```text
 hydrosat/
-  cli/        # Python entrypoints
-  configs/    # mmseg dataset + model configs for the winning SegFormer run
-  core/       # shared helpers, metrics, mask ops
-  tools/      # environment bootstrap and validation helpers
-requirements/ # pinned environment notes for OpenMMLab on Windows
-dataset-preliminary round/
-checkpoints/  # optional local / shared-Drive checkpoint bundle, not versioned
-work_dirs/    # optional local / shared-Drive winning checkpoints, not versioned
+  cli/                      # Python entrypoints
+  configs/                  # mmseg dataset + model configs for the winning SegFormer run
+  core/                     # shared helpers, metrics, mask ops
+  tools/                    # environment bootstrap and validation helpers
+requirements/               # pinned environment notes for OpenMMLab on Windows
+dataset-preliminary round/  # optional local / shared-Drive full raw dataset, not versioned
+checkpoints/                # optional local / shared-Drive checkpoint bundle, not versioned
+work_dirs/                  # optional local / shared-Drive winning checkpoints, not versioned
 artifacts/
 submission/
 tests/
@@ -127,16 +127,19 @@ Run the lightweight regression tests:
 .\openmmlab_env\Scripts\python.exe -m pytest
 ```
 
-## Optional Quick Reproduction With Shared Drive Checkpoints
+## Quick Reproduction With Shared Drive Checkpoints
 
-This path is **not** available from the Git clone alone anymore.
+This path is **not** available from the Git clone alone.
 
 Before running the commands below, copy the shared Google Drive checkpoint bundle into the repo so these files exist locally:
 
+- `dataset-preliminary round/Test/Images`
+- `dataset-preliminary round/Train/Images`
+- `dataset-preliminary round/Train/Masks`
+- `dataset-preliminary round/Val/Images`
+- `dataset-preliminary round/Val/Masks`
 - `work_dirs/segformer_b5_train__prelim_water_fresh_ade_seed3407/best_mIoU_iter_20000.pth`
 - `work_dirs/segformer_b5_train__prelim_water_fresh_ade_seed6143/best_mIoU_iter_16000.pth`
-
-If you do not have the Drive bundle, skip this section and use the full retraining flow instead.
 
 ### 1. Prepare the normalized binary dataset
 
@@ -199,7 +202,15 @@ If you do not have the Drive bundle, skip this section and use the full retraini
 
 ## Retrain The Winning Model From Scratch
 
-This is the default reproduction path for anyone cloning the repo without the shared Drive artifacts.
+This path is **not** available from the Git clone alone.
+
+Before running the commands below, copy the shared Google Drive checkpoint bundle into the repo so these files exist locally:
+
+- `dataset-preliminary round/Test/Images`
+- `dataset-preliminary round/Train/Images`
+- `dataset-preliminary round/Train/Masks`
+- `dataset-preliminary round/Val/Images`
+- `dataset-preliminary round/Val/Masks`
 
 ### 1. Prepare the normalized binary dataset
 
@@ -276,7 +287,7 @@ Tune the winning ensemble recipe:
 
 ## Dataset Layout
 
-The committed raw dataset is expected to keep this layout:
+The raw dataset is expected to keep this layout:
 
 ```text
 dataset-preliminary round/
@@ -311,7 +322,7 @@ artifacts/datasets/preliminary_round_water/
 
 ## Notes
 
-- This repo is intentionally heavy because it versions the raw dataset directly, but the large checkpoints are shared outside Git through Google Drive.
+- This repo is intentionally light because the raw dataset and large checkpoints are shared outside Git through Google Drive.
 - The README does not publish the leader phone number or email; those details belong only in the competition ZIP filename.
 - The authoritative winning references are `artifacts/final_selection/segformer_current_champion.json` and `artifacts/tuning/20260328_wave2_tta12_ms075_100_125/best.json`.
 - The repo containing our first attempt at tackling this challenge can be found [here](https://github.com/ArvBali2101/hydrosat-system).
