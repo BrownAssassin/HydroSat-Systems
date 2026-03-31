@@ -14,8 +14,6 @@ This repository is focused on **Track 2: Space IntelligenceS Promoting Water Qua
 - **Team members:**
   - [Arv Bali](https://github.com/ArvBali2101)
   - [Mrinank Sivakumar](https://github.com/BrownAssassin)
-  - Myles Liu
-  - Kenji Baritua
 
 ## Final Winning Result
 
@@ -325,4 +323,3 @@ artifacts/datasets/preliminary_round_water/
 - This repo is intentionally light because the raw dataset and large checkpoints are shared outside Git through Google Drive.
 - The README does not publish the leader phone number or email; those details belong only in the competition ZIP filename.
 - The authoritative winning references are `artifacts/final_selection/segformer_current_champion.json` and `artifacts/tuning/20260328_wave2_tta12_ms075_100_125/best.json`.
-- The repo containing our first attempt at tackling this challenge can be found [here](https://github.com/ArvBali2101/hydrosat-system).
